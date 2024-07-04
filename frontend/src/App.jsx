@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import axios from "axios";
 import { CreateTodo } from "./components/CreateTodo";
-import { Todos } from "./components/Todos";
+import { Todos } from "./components/RenderTodos";
 import { Navbar } from "./components/Navbar";
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const titleRef = useRef(null);
   const descRef = useRef(null);
+  const [hideAddbtn, setHideAddBtn] = useState(false);
 
   const fetchTodos = useCallback(async () => {
     console.log("fetchTodos called");
@@ -36,19 +37,22 @@ const App = () => {
     <div>
       <Navbar />
       <div className="bg-violet-300 p-5">
-        <h1 className="pt-5 pb-2 text-center text-2xl font-bold text-violet-950">
+        <h1 className="pt-5 pb-2 text-center text-4xl font-bold text-violet-950">
           ToDoBuddy - Manage your todos here
         </h1>
         <CreateTodo
           fetchTodos={fetchTodos}
           titleRef={titleRef}
           descRef={descRef}
+          hideAddbtn={hideAddbtn}
+          setHideAddBtn={setHideAddBtn}
         />
         <Todos
           todos={todos}
           fetchTodos={fetchTodos}
           titleRef={titleRef}
           descRef={descRef}
+          setHideAddBtn={setHideAddBtn}
         />
       </div>
     </div>
