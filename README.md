@@ -14,7 +14,7 @@ ToDoBuddy is a full-stack web application built using the MERN stack and styled 
    - Users can edit the title and description of an existing todo item. Changes are reflected by clicking the "Update Todo" button.
 
 4. **Mark as Incomplete:**
-   - Completed todos can be marked as incomplete.
+   - Revert completed todos back to incomplete status.
 
 5. **Delete Todo:**
    - Users have the option to delete a particular todo item.
