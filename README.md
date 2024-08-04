@@ -44,8 +44,12 @@ To run ToDoBuddy locally:
 3. Open a new terminal window or tab.
 4. Navigate to the backend directory: `cd backend`.
 5. Install backend dependencies: `npm install`.
-6. Set up your MongoDB database and update the connection string in the backend.
-7. Start the backend server: `node index.js`.
+6. Create a `.env` file in the `backend` directory and add the following:
+    ```env
+    MONGO_URI=your_mongodb_uri
+    ```
+7. Set up your MongoDB database and update the connection string (MONGO_URI).
+8. Start the backend server: `node index.js`.
 
 ### Setting Up Frontend
 
